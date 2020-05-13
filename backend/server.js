@@ -12,13 +12,18 @@ app.use(cors());
 app.use(express.json());
 
 const uri =
-  process.env.MONGODB_URI ||
   "mongodb+srv://Shokoman:Shokoman@cluster0-cvqcf.mongodb.net/test?retryWrites=true&w=majority";
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  uri,
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  },
+  (err) => {
+    throw err;
+  }
+);
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB connected");
