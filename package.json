@@ -22,8 +22,9 @@
     "serve": "^11.3.0"
   },
   "scripts": {
-    "start": "node backend/server && serve -s build",
+    "start": "node backend/server",
     "build": "react-scripts build",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
