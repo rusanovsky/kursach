@@ -6,9 +6,6 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">
-          exercises
-        </Link>
         <div className=" navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
@@ -35,8 +32,7 @@ export default class Navbar extends Component {
                     .get("http://localhost:5000/exercises/mail/")
                     .then((response) => console.log(response.data))
                     .catch((err) => console.log(err.message));
-                }}
-              >
+                }}>
                 Send
               </button>
             </li>

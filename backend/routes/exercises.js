@@ -31,7 +31,7 @@ router.route("/mail").get((req, res) => {
             ${gsfcnasa.message}`,
             });
           })
-          .catch((err) => res.status(400).json("Error: " + err));
+          .catch((err) => res.status(400).json("Error: " + err.message));
         console.log("Message sent");
       }
     });
