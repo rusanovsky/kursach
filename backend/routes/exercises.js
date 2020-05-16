@@ -3,7 +3,6 @@ let Exercise = require("../models/exercise.model");
 let User = require("../models/user.model");
 const transporter = require("../transporter");
 let gsfcnasa = require("../nasa");
-//require("dotenv").config({ path: "../.env" });
 
 router.route("/").get((req, res) => {
   Exercise.find()
