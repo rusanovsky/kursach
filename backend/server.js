@@ -11,7 +11,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = "mongodb+srv://Shokoman:Shokoman@cluster0-cvqcf.mongodb.net/test?retryWrites=true&w=majority";
+const uri =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://Shokoman:Shokoman@cluster0-cvqcf.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(
   uri,
   {
@@ -31,7 +33,7 @@ connection.once("open", () => {
 const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, "../build")));
 
 app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
