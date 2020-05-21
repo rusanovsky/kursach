@@ -29,7 +29,7 @@ export default class Navbar extends Component {
                 className="btn btn-outline-primary"
                 onClick={() => {
                   axios
-                    .get("http://localhost:5000/exercises/mail/")
+                    .get("https://nameless-chamber-63878.herokuapp.com/exercises/mail/")
                     .then((response) => console.log(response.data))
                     .catch((err) => console.log(err.message));
                 }}>
